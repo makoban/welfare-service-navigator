@@ -1,4 +1,5 @@
 import { ProposalContent } from "@/components/ProposalContent";
+import { SearchDemo } from "@/components/SearchDemo";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search } from "lucide-react";
 
@@ -39,7 +40,12 @@ export default function Home() {
             <Button size="lg" className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
               提案内容を見る <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base bg-white/50 backdrop-blur-sm border-white/40 hover:bg-white/80">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-full px-8 h-12 text-base bg-white/50 backdrop-blur-sm border-white/40 hover:bg-white/80"
+              onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Search className="mr-2 h-4 w-4" /> デモを体験する
             </Button>
           </div>
@@ -61,8 +67,16 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="container px-4 mx-auto pb-24">
+      <main className="container px-4 mx-auto pb-24 space-y-24">
         <ProposalContent />
+        
+        {/* Interactive Demo Section */}
+        <section id="demo" className="scroll-mt-24">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-pink-50/50 rounded-3xl -z-10 blur-3xl opacity-50" />
+            <SearchDemo />
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
