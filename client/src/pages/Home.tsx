@@ -2,7 +2,7 @@ import { ProposalContent } from "@/components/ProposalContent";
 import { SearchDemo } from "@/components/SearchDemo";
 import { AIChatDemo } from "@/components/AIChatDemo";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
@@ -19,22 +19,19 @@ export default function Home() {
         </div>
         
         <div className="container px-4 mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-sm border border-white/20 shadow-sm text-primary text-sm font-medium animate-fade-in-up">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            New Proposal for Zenko-sai
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-sm font-bold shadow-sm mb-6 animate-fade-in-up">
+            <Sparkles className="h-4 w-4 fill-primary" />
+            <span>New Solution Proposal</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground max-w-4xl mx-auto leading-tight animate-fade-in-up delay-100">
-            福利厚生サービスを、<br />
-            <span className="text-primary">もっと身近に、もっと便利に。</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground drop-shadow-sm mb-6 animate-fade-in-up delay-100">
+            Prime Smart Navigator<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600 text-4xl md:text-6xl block mt-2">福利厚生の「新しいあたりまえ」へ</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up delay-200">
-            「探すのが大変」を解決する、新しい検索体験のご提案。<br />
-            ライフステージや目的に合わせて、最適なサービスをナビゲートします。
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+            AI秘書ボットとマルチタグサーチで、サービスの利用率を劇的に向上。<br />
+            既存システムを活かしたまま導入できる、次世代ナビゲーションシステム。
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">

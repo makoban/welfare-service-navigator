@@ -1,221 +1,197 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckCircle2, Search, Tag, Users, Home, Heart, Wallet } from "lucide-react";
+import { Bot, Search, Layers, ArrowRight, CheckCircle2, Sparkles, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function ProposalContent() {
   return (
-    <div className="space-y-12 py-8">
-      {/* Introduction Section */}
-      <section className="text-center space-y-4 max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-primary">現状の課題と解決策</h2>
-        <p className="text-muted-foreground text-lg">
-          充実した福利厚生サービスを、より多くの従業員様に活用していただくために。
-          「探すのが大変」という声を「見つけるのが楽しい」に変えるソリューションをご提案します。
+    <div className="space-y-24 py-8">
+      {/* Concept Section */}
+      <section className="text-center space-y-6 max-w-4xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold mb-4">
+          <Sparkles className="h-4 w-4" />
+          <span>次世代の福利厚生プラットフォーム</span>
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+          Prime Smart Navigator<br />
+          <span className="text-primary text-3xl md:text-4xl block mt-2">(PSN)</span>
+        </h2>
+        <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
+          「探す」から「任せる」へ。<br />
+          従業員様の満足度と、運営者様の導入しやすさを両立する<br />
+          新しいソリューションをご提案します。
         </p>
       </section>
 
-      {/* Problem & Solution Comparison */}
-      <section className="grid md:grid-cols-2 gap-8">
-        <Card className="border-destructive/20 bg-destructive/5 shadow-sm">
+      {/* 3 Key Features */}
+      <section className="grid md:grid-cols-3 gap-8">
+        {/* Feature 1 */}
+        <Card className="border-none shadow-lg bg-gradient-to-b from-white to-blue-50/50 hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Bot className="h-32 w-32 text-primary" />
+          </div>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-destructive">
-              <Search className="h-5 w-5" />
-              現状の課題
+            <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+              <Bot className="h-6 w-6" />
+            </div>
+            <Badge variant="secondary" className="w-fit mb-2">Point 01</Badge>
+            <CardTitle className="text-xl font-bold leading-snug">
+              AIで予約・連絡まで完結<br />
+              <span className="text-primary">「あなたの秘書ボット」</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="bg-white/50 p-4 rounded-lg">
-              <h4 className="font-bold mb-2">カテゴリ分類の限界</h4>
-              <p className="text-sm text-muted-foreground">
-                「保険」「トラベル」などの種類別分類のみで、
-                「子育て」「引っ越し」などのニーズで横断的に探せない。
-              </p>
-            </div>
-            <div className="bg-white/50 p-4 rounded-lg">
-              <h4 className="font-bold mb-2">検索機能の不足</h4>
-              <p className="text-sm text-muted-foreground">
-                地域、割引率、利用シーンなど、詳細な条件での絞り込みができず、
-                膨大なサービスから自分に合うものを見つけにくい。
-              </p>
-            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              検索だけでなく、宿の空室確認やお店の予約、トラブル時のレッカー手配まで、AIがあなたに代わって電話やチャットで交渉・連絡を行います。
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+                <span>面倒な電話確認をAIが代行</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+                <span>LINE等のチャットで完結</span>
+              </li>
+            </ul>
+            <Button 
+              variant="link" 
+              className="p-0 h-auto text-primary font-bold group-hover:translate-x-1 transition-transform"
+              onClick={() => document.getElementById('ai-concierge')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              デモを見る <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
           </CardContent>
         </Card>
 
-        <Card className="border-primary/20 bg-primary/5 shadow-md ring-1 ring-primary/10">
+        {/* Feature 2 */}
+        <Card className="border-none shadow-lg bg-gradient-to-b from-white to-purple-50/50 hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Search className="h-32 w-32 text-purple-500" />
+          </div>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-primary">
-              <CheckCircle2 className="h-5 w-5" />
-              提案ソリューション
+            <div className="h-12 w-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-500 mb-4 group-hover:scale-110 transition-transform">
+              <Search className="h-6 w-6" />
+            </div>
+            <Badge variant="secondary" className="w-fit mb-2">Point 02</Badge>
+            <CardTitle className="text-xl font-bold leading-snug">
+              直感的に見つかる<br />
+              <span className="text-purple-600">「マルチタグサーチ」</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="bg-white/80 p-4 rounded-lg shadow-sm">
-              <h4 className="font-bold mb-2 text-primary">スマート・ナビゲーター機能</h4>
-              <p className="text-sm text-muted-foreground">
-                ユーザーの「目的」や「状況」からサービスにたどり着ける新しい検索体験。
-                タグ付け、複合フィルタリング、ライフイベント提案を実現します。
-              </p>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              「#子育て」「#節約」などのタグを選ぶだけのシンプルデザイン。複雑なカテゴリ階層を意識することなく、目的のサービスに最短距離で到達できます。
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+                <span>誰でも使えるシンプルUI</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+                <span>目的・シーンから逆引き検索</span>
+              </li>
+            </ul>
+            <Button 
+              variant="link" 
+              className="p-0 h-auto text-purple-600 font-bold group-hover:translate-x-1 transition-transform"
+              onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              デモを見る <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Feature 3 */}
+        <Card className="border-none shadow-lg bg-gradient-to-b from-white to-orange-50/50 hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Layers className="h-32 w-32 text-orange-500" />
+          </div>
+          <CardHeader>
+            <div className="h-12 w-12 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-4 group-hover:scale-110 transition-transform">
+              <Layers className="h-6 w-6" />
             </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div className="bg-white/60 p-3 rounded-lg text-center">
-                <Tag className="h-6 w-6 mx-auto mb-2 text-accent" />
-                <span className="text-xs font-bold">タグ検索</span>
-              </div>
-              <div className="bg-white/60 p-3 rounded-lg text-center">
-                <Users className="h-6 w-6 mx-auto mb-2 text-accent" />
-                <span className="text-xs font-bold">ライフイベント提案</span>
-              </div>
+            <Badge variant="secondary" className="w-fit mb-2">Point 03</Badge>
+            <CardTitle className="text-xl font-bold leading-snug">
+              導入も運用もかんたん<br />
+              <span className="text-orange-600">「既存サイト活用型」</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              現在稼働中のウェブサイトを改修することなく、オーバーレイやAPI連携で導入可能。システム移行のリスクやコストを最小限に抑えます。
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+                <span>大規模改修不要でスピード導入</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+                <span>既存データベースをそのまま活用</span>
+              </li>
+            </ul>
+            <div className="mt-4 p-3 bg-white/60 rounded-lg border border-orange-100 flex items-center gap-3">
+              <Zap className="h-5 w-5 text-orange-500 fill-orange-500" />
+              <span className="text-xs font-bold text-orange-800">提供会社様の手間も最小限！</span>
             </div>
           </CardContent>
         </Card>
       </section>
 
-      {/* Feature Details */}
-      <section className="space-y-6">
-        <h3 className="text-2xl font-bold text-center">主な機能詳細</h3>
-        
-        <Tabs defaultValue="tags" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-8">
-            <TabsTrigger value="tags">タグ付け導入</TabsTrigger>
-            <TabsTrigger value="filter">複合フィルタリング</TabsTrigger>
-            <TabsTrigger value="scenario">ライフイベント提案</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="tags" className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>ニーズに合わせたタグ付け</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                  {[
-                    { tag: "#子育て", desc: "出産、育児、教育費", icon: Users },
-                    { tag: "#節約", desc: "日常生活のコスト削減", icon: Wallet },
-                    { tag: "#引っ越し", desc: "転居の手続き・費用", icon: Home },
-                    { tag: "#健康維持", desc: "メンテナンス・予防", icon: Heart },
-                    { tag: "#老後の備え", desc: "終活、相続、介護", icon: Users },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-secondary/30 border border-border/50">
-                      <div className="p-2 rounded-full bg-white shadow-sm text-primary">
-                        <item.icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <Badge variant="secondary" className="mb-1 text-primary">{item.tag}</Badge>
-                        <p className="text-xs text-muted-foreground">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="filter" className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>直感的な複合フィルタリング</CardTitle>
-              </CardHeader>
-              <CardContent className="grid md:grid-cols-2 gap-6 items-center">
-                <div className="space-y-4">
-                  <p className="text-muted-foreground">
-                    キーワード検索に加え、複数の条件を組み合わせて、
-                    自分にぴったりのサービスを瞬時に絞り込めます。
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      <span>タグ複数選択</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      <span>カテゴリ絞り込み</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      <span>地域フィルタ（全国・エリア限定）</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      <span>割引・特典タイプ別</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-muted/30 p-6 rounded-xl border border-border/50">
-                  {/* Mock UI for Filter */}
-                  <div className="space-y-3">
-                    <div className="h-8 bg-white rounded shadow-sm w-full animate-pulse" />
-                    <div className="flex gap-2">
-                      <div className="h-8 bg-white rounded shadow-sm w-1/3 animate-pulse" />
-                      <div className="h-8 bg-white rounded shadow-sm w-1/3 animate-pulse" />
-                      <div className="h-8 bg-white rounded shadow-sm w-1/3 animate-pulse" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 mt-4">
-                      <div className="h-24 bg-white rounded shadow-sm animate-pulse" />
-                      <div className="h-24 bg-white rounded shadow-sm animate-pulse" />
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="scenario" className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>ライフイベント・シナリオ提案</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-pink-50 to-white border border-pink-100 shadow-sm">
-                    <h4 className="font-bold text-pink-600 mb-2">結婚が決まったら</h4>
-                    <div className="flex flex-wrap gap-1">
-                      <Badge variant="outline" className="bg-white/50">#結婚</Badge>
-                      <Badge variant="outline" className="bg-white/50">#住まい</Badge>
-                      <Badge variant="outline" className="bg-white/50">#節約</Badge>
-                    </div>
-                  </div>
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 shadow-sm">
-                    <h4 className="font-bold text-blue-600 mb-2">マイホームを検討</h4>
-                    <div className="flex flex-wrap gap-1">
-                      <Badge variant="outline" className="bg-white/50">#住まい</Badge>
-                      <Badge variant="outline" className="bg-white/50">#引っ越し</Badge>
-                      <Badge variant="outline" className="bg-white/50">#保険</Badge>
-                    </div>
-                  </div>
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-white border border-green-100 shadow-sm">
-                    <h4 className="font-bold text-green-600 mb-2">子供が小学校に入学</h4>
-                    <div className="flex flex-wrap gap-1">
-                      <Badge variant="outline" className="bg-white/50">#子育て</Badge>
-                      <Badge variant="outline" className="bg-white/50">#教育</Badge>
-                      <Badge variant="outline" className="bg-white/50">#お祝い金</Badge>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
-      </section>
-
-      {/* Expected Effects */}
-      <section className="bg-primary/5 rounded-2xl p-8 text-center space-y-6">
-        <h3 className="text-2xl font-bold text-primary">導入効果</h3>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="space-y-2">
-            <div className="h-12 w-12 rounded-full bg-white shadow-md flex items-center justify-center mx-auto text-primary font-bold text-xl">1</div>
-            <h4 className="font-bold">ユーザー満足度向上</h4>
-            <p className="text-sm text-muted-foreground">「探すのが大変」という不満を解消し、快適な利用体験を提供</p>
+      {/* Architecture Diagram (Conceptual) */}
+      <section className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border/50">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold">既存システムに「知能」をプラス</h3>
+            <p className="text-muted-foreground">
+              PSNは、貴会の既存ウェブサイトの上に「インテリジェント・レイヤー」として機能します。
+              裏側のデータベースや会員管理システムはそのままに、ユーザーインターフェースだけを劇的に進化させることができます。
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 border border-border">
+                <div className="font-bold text-sm w-24 shrink-0">Step 1</div>
+                <div className="text-sm">既存サイトのサービス情報をPSNが自動学習</div>
+              </div>
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 border border-border">
+                <div className="font-bold text-sm w-24 shrink-0">Step 2</div>
+                <div className="text-sm">ユーザーの要望をAIが解析し、最適なサービスを抽出</div>
+              </div>
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 border border-border">
+                <div className="font-bold text-sm w-24 shrink-0">Step 3</div>
+                <div className="text-sm">予約・申し込み情報を既存システムへ安全に連携</div>
+              </div>
+            </div>
           </div>
-          <div className="space-y-2">
-            <div className="h-12 w-12 rounded-full bg-white shadow-md flex items-center justify-center mx-auto text-primary font-bold text-xl">2</div>
-            <h4 className="font-bold">利用率の向上</h4>
-            <p className="text-sm text-muted-foreground">潜在ニーズへの提案により、サービスの利用機会が増加</p>
-          </div>
-          <div className="space-y-2">
-            <div className="h-12 w-12 rounded-full bg-white shadow-md flex items-center justify-center mx-auto text-primary font-bold text-xl">3</div>
-            <h4 className="font-bold">サイト価値の向上</h4>
-            <p className="text-sm text-muted-foreground">充実したサービスをより分かりやすく提供し、サイトの価値を高める</p>
+          <div className="relative h-64 md:h-full min-h-[300px] bg-secondary/10 rounded-2xl flex items-center justify-center p-8">
+            {/* Simple Diagram */}
+            <div className="relative w-full max-w-xs">
+              {/* Base Layer */}
+              <div className="bg-slate-200 rounded-lg p-4 text-center text-slate-500 font-bold mb-2">
+                既存システム / データベース
+              </div>
+              {/* Connection Lines */}
+              <div className="flex justify-center gap-8 mb-2">
+                <div className="w-0.5 h-8 bg-slate-300"></div>
+                <div className="w-0.5 h-8 bg-slate-300"></div>
+              </div>
+              {/* PSN Layer */}
+              <div className="bg-gradient-to-r from-primary to-purple-600 rounded-xl p-6 text-center text-white shadow-xl relative z-10">
+                <div className="font-bold text-lg mb-1">PSN Core</div>
+                <div className="text-xs opacity-90">AI Concierge & Tag Search</div>
+                <div className="absolute -top-3 -right-3 bg-yellow-400 text-yellow-900 text-[10px] font-bold px-2 py-1 rounded-full shadow-sm">
+                  Easy Connect
+                </div>
+              </div>
+              {/* User Layer */}
+              <div className="flex justify-center mb-2 mt-2">
+                <div className="w-0.5 h-8 bg-primary/30"></div>
+              </div>
+              <div className="bg-white border-2 border-primary rounded-full p-3 text-center text-primary font-bold shadow-sm mx-auto w-32">
+                User
+              </div>
+            </div>
           </div>
         </div>
       </section>
