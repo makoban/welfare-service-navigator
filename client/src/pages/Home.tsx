@@ -1,5 +1,6 @@
 import { ProposalContent } from "@/components/ProposalContent";
 import { SearchDemo } from "@/components/SearchDemo";
+import { AIChatDemo } from "@/components/AIChatDemo";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search } from "lucide-react";
 
@@ -44,9 +45,9 @@ export default function Home() {
               variant="outline" 
               size="lg" 
               className="rounded-full px-8 h-12 text-base bg-white/50 backdrop-blur-sm border-white/40 hover:bg-white/80"
-              onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('ai-concierge')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Search className="mr-2 h-4 w-4" /> デモを体験する
+              <Search className="mr-2 h-4 w-4" /> AIコンシェルジュを試す
             </Button>
           </div>
 
@@ -75,6 +76,14 @@ export default function Home() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-pink-50/50 rounded-3xl -z-10 blur-3xl opacity-50" />
             <SearchDemo />
+          </div>
+        </section>
+
+        {/* AI Concierge Demo Section */}
+        <section id="ai-concierge" className="scroll-mt-24 pb-24">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-l from-yellow-50/50 via-orange-50/50 to-red-50/50 rounded-3xl -z-10 blur-3xl opacity-50" />
+            <AIChatDemo />
           </div>
         </section>
       </main>
