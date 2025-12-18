@@ -13,13 +13,18 @@ export function AIChatDemo() {
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom
+  // Auto-scroll to bottom (チャットエリア内のみ - ページ全体はスクロールしない)
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    if (scrollAreaRef.current && activeScenario) {
+      // ScrollArea内のスクロール可能な要素を取得してスクロール
+      const scrollContainer = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
+      if (scrollContainer) {
+        scrollContainer.scrollTop = scrollContainer.scrollHeight;
+      }
     }
-  }, [messages, isTyping]);
+  }, [messages, isTyping, activeScenario]);
 
   const startScenario = (scenario: ScenarioType) => {
     setActiveScenario(scenario);
@@ -155,7 +160,7 @@ export function AIChatDemo() {
           </div>
 
           {/* Messages Area */}
-          <ScrollArea className="flex-1 p-4 bg-slate-50/50">
+          <ScrollArea ref={scrollAreaRef} className="flex-1 p-4 bg-slate-50/50">
             <div className="space-y-6 pb-4">
               {!activeScenario && (
                 <div className="flex flex-col items-center justify-center h-64 text-muted-foreground space-y-4 opacity-50">
