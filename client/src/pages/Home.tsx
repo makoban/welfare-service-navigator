@@ -40,7 +40,7 @@ export default function Home() {
               variant="outline" 
               size="lg" 
               className="rounded-full px-8 h-12 text-base bg-white/50 backdrop-blur-sm border-white/40 hover:bg-white/80"
-              onClick={() => document.getElementById('ai-concierge')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('ai-concierge')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
             >
               <Search className="mr-2 h-4 w-4" /> AIコンシェルジュを試す
             </Button>

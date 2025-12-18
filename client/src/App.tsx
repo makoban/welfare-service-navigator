@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch, Router as WouterRouter } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
+import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
@@ -30,6 +31,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <WouterRouter hook={useHashLocation}>
+            <ScrollToTop />
             <AppRouter />
           </WouterRouter>
         </TooltipProvider>
