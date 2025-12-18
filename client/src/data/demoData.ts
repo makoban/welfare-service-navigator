@@ -51,7 +51,7 @@ export const SERVICES: ServiceType[] = [
     tags: ["childcare", "saving"],
     discountType: "割引",
     discountValue: "20%OFF",
-    image: "/images/icon-family.png",
+    image: "./images/icon-family.png",
   },
   {
     id: "2",
@@ -61,7 +61,7 @@ export const SERVICES: ServiceType[] = [
     tags: ["childcare", "travel", "saving"],
     discountType: "割引",
     discountValue: "最大50%OFF",
-    image: "/images/icon-family.png",
+    image: "./images/icon-family.png",
   },
   {
     id: "3",
@@ -71,7 +71,7 @@ export const SERVICES: ServiceType[] = [
     tags: ["moving", "saving", "housing"],
     discountType: "割引",
     discountValue: "30%OFF",
-    image: "/images/icon-house.png",
+    image: "./images/icon-house.png",
   },
   {
     id: "4",
@@ -81,7 +81,7 @@ export const SERVICES: ServiceType[] = [
     tags: ["health", "saving"],
     discountType: "給付金",
     discountValue: "5,000円補助",
-    image: "/images/icon-health.png",
+    image: "./images/icon-health.png",
   },
   {
     id: "5",
@@ -91,7 +91,7 @@ export const SERVICES: ServiceType[] = [
     tags: ["learning", "saving"],
     discountType: "特典",
     discountValue: "初月無料",
-    image: "/images/icon-family.png",
+    image: "./images/icon-family.png",
   },
   {
     id: "6",
@@ -101,7 +101,7 @@ export const SERVICES: ServiceType[] = [
     tags: ["childcare", "celebration"],
     discountType: "給付金",
     discountValue: "10,000円",
-    image: "/images/icon-family.png",
+    image: "./images/icon-family.png",
   },
   {
     id: "7",
@@ -111,7 +111,7 @@ export const SERVICES: ServiceType[] = [
     tags: ["saving", "housing"],
     discountType: "割引",
     discountValue: "基本料3ヶ月無料",
-    image: "/images/icon-money.png",
+    image: "./images/icon-money.png",
   },
   {
     id: "8",
@@ -121,6 +121,6 @@ export const SERVICES: ServiceType[] = [
     tags: ["travel", "saving"],
     discountType: "割引",
     discountValue: "会員限定価格",
-    image: "/images/icon-house.png",
+    image: "./images/icon-house.png",
   },
 ];
