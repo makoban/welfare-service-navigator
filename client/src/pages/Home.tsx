@@ -11,7 +11,7 @@ export default function Home() {
       <header className="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40">
         <div className="absolute inset-0 -z-10">
           <img 
-            src="/images/hero-bg.png" 
+            src="./images/hero-bg.png" 
             alt="Background" 
             className="w-full h-full object-cover opacity-50"
           />
@@ -35,9 +35,7 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
-            <Button size="lg" className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
-              提案内容を見る <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+
             <Button 
               variant="outline" 
               size="lg" 
@@ -50,16 +48,16 @@ export default function Home() {
 
           {/* Floating Icons Decoration */}
           <div className="absolute top-1/2 left-10 -translate-y-1/2 hidden lg:block animate-float-slow">
-            <img src="/images/icon-family.png" alt="Family" className="w-24 h-24 drop-shadow-xl opacity-90 hover:scale-110 transition-transform duration-500" />
+            <img src="./images/icon-family.png" alt="Family" className="w-24 h-24 drop-shadow-xl opacity-90 hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="absolute top-1/3 right-10 hidden lg:block animate-float-slower">
-            <img src="/images/icon-house.png" alt="House" className="w-20 h-20 drop-shadow-xl opacity-90 hover:scale-110 transition-transform duration-500" />
+            <img src="./images/icon-house.png" alt="House" className="w-20 h-20 drop-shadow-xl opacity-90 hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="absolute bottom-10 left-1/4 hidden lg:block animate-float">
-            <img src="/images/icon-money.png" alt="Money" className="w-16 h-16 drop-shadow-xl opacity-80 hover:scale-110 transition-transform duration-500" />
+            <img src="./images/icon-money.png" alt="Money" className="w-16 h-16 drop-shadow-xl opacity-80 hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="absolute top-20 right-1/4 hidden lg:block animate-float-slow">
-            <img src="/images/icon-health.png" alt="Health" className="w-18 h-18 drop-shadow-xl opacity-80 hover:scale-110 transition-transform duration-500" />
+            <img src="./images/icon-health.png" alt="Health" className="w-18 h-18 drop-shadow-xl opacity-80 hover:scale-110 transition-transform duration-500" />
           </div>
         </div>
       </header>
